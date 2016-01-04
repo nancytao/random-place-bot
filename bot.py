@@ -1,7 +1,6 @@
 import requests
 
 def random_word():
-    word = requests.get('http://randomword.setgetgo.com/get.php')
-    return word.text.replace('\n', '').replace('\r', '')
+    return requests.get('http://randomword.setgetgo.com/get.php').text.strip()
 
 print(random_word())
