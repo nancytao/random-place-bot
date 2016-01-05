@@ -1,7 +1,9 @@
-import requests
+import requests, config
 
 
 def random_word():
-    return requests.get('http://randomword.setgetgo.com/get.php').text.strip()
+    wlength = {'len': '6'}
+    return requests.get('http://randomword.setgetgo.com/get.php', params=wlength).text.strip()
 
-print(random_word())
+three_words = [random_word(), random_word(), random_word()]
+print(three_words)
