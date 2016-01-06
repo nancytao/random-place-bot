@@ -1,6 +1,7 @@
 import requests
 import random
-import config, urllib, urllib2, json, tweepy
+import config
+import tweepy
 
 
 def random_word():
