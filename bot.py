@@ -1,7 +1,22 @@
-import requests
-import random
 import config
+import json
+import random
+import requests
 import tweepy
+import urllib
+
+
+def getPosition(words="clashes.crib.purses"):  # default is Georgia Tech college of computing
+    if isinstance(words, list):
+        words = "%s.%s.%s" % (words[0], words[1], words[2])
+
+    params = {
+        'string': words,
+        'key': config.W3W_KEY,
+    }
+    encparams = urllib.urlencode(params)
+    response = urllib.urlopen("http://api.what3words.com/w3w", encparams).read()
+    return json.loads(response)
 
 
 def random_word():
@@ -15,4 +30,5 @@ auth.set_access_token(ACCESS_KEY, config.TWITTER_ACCESS_SECRET)
 api = tweepy.API(auth)
 
 three_words = [random_word(), random_word(), random_word()]
-print(three_words)
+
+print getPosition()
