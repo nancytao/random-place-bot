@@ -17,7 +17,7 @@ def get_position(words="clashes.crib.purses"):  # default is Georgia Tech colleg
 
 
 def random_word():
-    wlength = {'len': random.randrange(4, 7)}  # random.randrange(3, 19)
+    wlength = {'len': 5}  # random.randrange(3, 19)
     return requests.get('http://randomword.setgetgo.com/get.php', params=wlength).text.strip()
 
 CONSUMER_KEY = 'vNXrQnSpIDQecNmt2GWtotrxb'
@@ -28,7 +28,7 @@ api = tweepy.API(auth)
 
 three_words = [random_word(), random_word(), random_word()]
 
-counter = 1;
+counter = 1
 
 print (str(counter) + str(three_words))
 position = get_position(three_words)
