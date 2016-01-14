@@ -1,5 +1,5 @@
 import config
-import random
+# import random
 import requests
 import tweepy
 
