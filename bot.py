@@ -30,17 +30,17 @@ three_words = [random_word(), random_word(), random_word()]
 
 counter = 1
 
-print (str(counter) + str(three_words))
+print(str(counter) + str(three_words))
 position = get_position(three_words)
 
 while True:
     try:
-        throw_away = position['error']
+        throw_away = position['error']  # triggers KeyError if there is no error in the dict
         three_words = [random_word(), random_word(), random_word()]
         counter = counter + 1
-        print (str(counter) + str(three_words))
+        print(str(counter) + str(three_words))
         position = get_position(three_words)
     except KeyError:
         break
 
-print get_position(three_words)
+print(get_position(three_words))
